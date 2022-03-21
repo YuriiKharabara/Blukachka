@@ -1,12 +1,7 @@
 """Game Blukachka"""
 
-class Floor:
-    def set_floor():
-        pass
-    pass
 
-
-class Room(Floor):
+class Room:
     """Room class"""
 
     def __init__(self, name):
@@ -166,8 +161,6 @@ class Enemy(Creature):
         Enemy.defeated += 1
         return Enemy.defeated
 
-class Friend(Creature):
-    pass
 
 class Item:
     """Item class"""
