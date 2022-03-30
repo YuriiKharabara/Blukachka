@@ -1,10 +1,19 @@
 """Game Blukachka"""
 
+# class Floor:
+#     def __init__(self, floor) -> None:
+#         self.floor=floor
+#         self.directions_for_floor = {'FLoor 1': None,
+#                            'Floor 2': None, 'Floor 3': None}
+#     def link_rooms(self, room, direction):
+#         self.directions_for_floor[direction] = room 
+
+
 
 class Room:
     """Room class"""
 
-    def __init__(self, name):
+    def __init__(self, name, floor='Floor 1'):
         """Constructor
 
         Args:
@@ -12,9 +21,10 @@ class Room:
         """
         self.name = name
         self.character = None
-        self.directions = {'north': None,
-                           'south': None, 'east': None, 'west': None}
+        self.directions = {'1': None,
+                           '2': None, '3': None, '4': None, '5': None, 'f1': None, 'f2': None, 'f3': None}
         self.item = None
+        # super().__init__(floor)
 
     def set_description(self, description):
         """Sets description for the room
@@ -55,7 +65,7 @@ class Room:
         print(f"{self.name}\n--------------------\n{self.description}")
         for i in self.directions:
             if self.directions[i] != None:
-                print(f'The {self.directions[i].name} is {i}')
+                print(f'{i} - {self.directions[i].name}')
         if self.character != None:
             print(f'{self.character.name} is here!\n{self.character.description}')
         if self.item != None:
@@ -161,7 +171,25 @@ class Enemy(Creature):
         Enemy.defeated += 1
         return Enemy.defeated
 
+class Friend(Creature):
+    def __init__(self, name, description):
+        """Constructor
 
+        Args:
+            name (str): Creature name
+            description (str): Description for the creature
+        """
+        super().__init__(name, description)
+    def set_weakness(self, weakness):
+        """Sets weakness for the Friend
+
+        Args:
+            weakness (str): weakness
+        """
+        self.weakness = weakness
+    def set_trade(self, item):
+        self.trade=item
+        
 class Item:
     """Item class"""
 

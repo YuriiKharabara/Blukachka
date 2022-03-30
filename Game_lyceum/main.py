@@ -1,54 +1,57 @@
-from matplotlib.pyplot import hlines
 import game
 
-floor_1=game.Floor("Floor 1")
-floor_2=game.Floor("Floor 2")
-floor_3=game.Floor("Floor 3")
 
 svyatyy = game.Room('Svyatyy shop')
 svyatyy.set_description("Works round the clock.")
 
-outdoor=game.Room("You're on the street")
-#----------------------------------------------------------------------------------------
+outdoor = game.Room("Outdoor")
+outdoor.set_description("You're on the street")
+
+# ----------------------------------------------------------------------------------------
 lyceum = game.Room("Physmat lyceum")
-lyceum.set_description("Works from 8:30 to 18:00")
+lyceum.set_description("Boarding school at UCU")
 
 wardrobe = game.Room("Wardrobe")
 wardrobe.set_description("Just a wardrobe...")
 
-hall_1 = game.Room("Hall")
-hall_1.set_description("A lot of classes, but all of them are closed except gym.")
+floor_1 = game.Room("Floor 1")
+floor_1.set_description(
+    "A lot of classes, but all of them are closed, except gym...")
 
-gym=game.Room("gym")
-gym.set_description("A large green hall with a volleyball net and basketball hoops")
+gym = game.Room("gym")
+gym.set_description(
+    "A large green hall with a volleyball net and basketball hoops")
 
-#-----------------------------------------------------------------------------------------
-class_206=game.Room("Class 206")
-class_206.set_description("Ааххахаха, придумай шось сюди")
+# -----------------------------------------------------------------------------------------
+class_206 = game.Room("Class 206")
+class_206.set_description("Shelter for Oksanka")
 
-syanka=game.Room("Oksana's *Bohdanivna* room")
-syanka.set_description("Small room where you always can find Ihor Telychyn if you need")
+syanka = game.Room("Oksana's *Bohdanivna* room")
+syanka.set_description(
+    "Small room where you always can find Ihor Telychyn if you need him.")
 
-ilkovych=game.Room("Ilkovych's class")
+ilkovych = game.Room("Ilkovych's class")
 ilkovych.set_description("A big room with piano, projector ...")
 
-headmaster=game.Room("Mr. Dobosevych class")
+headmaster = game.Room("Mr. Dobosevych class")
 headmaster.set_description("Nobody saw what's there")
 
-teachers_room_2=game.Room("Teacher's room")
+teachers_room_2 = game.Room("Teacher's room")
 teachers_room_2.set_description("Shelter of linguist")
 
-hall_2 = game.Room("Hall")
-hall_2.set_description("A lot of classes, but all of them are closed except gym.")
-#------------------------------------------------------------------------------------------
-it_class=game.Room("It class")
-it_class.set_description("Here are a lot of computer's")
+floor_2 = game.Room("Floor 2")
+floor_2.set_description("If you arrive before the first lesson begins, expect a cake in the middle of the hallway :)")
+# ------------------------------------------------------------------------------------------
+it_class = game.Room("It class")
+it_class.set_description("Here are a lot of computer's for word 2003 and board for coding.")
 
-teachers_room_3=game.Room("Teacher's room")
+teachers_room_3 = game.Room("Teacher's room")
 teachers_room_3.set_description("Shelter of Chemists")
 
-hall_3 = game.Room("Hall")
-hall_3.set_description("A lot of classes, but all of them are closed except gym.")
+floor_3 = game.Room("Floor 3")
+floor_3.set_description(
+    "It's scary ... There are physicists ...")
+
 
 svyatyy.link_room(outdoor, '1')
 
@@ -59,35 +62,39 @@ lyceum.link_room(outdoor, '1')
 lyceum.link_room(wardrobe, '2')
 
 wardrobe.link_room(lyceum, "1")
-wardrobe.link_room(hall_1, "2")
+wardrobe.link_room(floor_1, "f1")
 
-hall_1.link_room(wardrobe, '1')
-hall_1.link_room(gym, '2')
+floor_1.link_room(wardrobe, '1')
+floor_1.link_room(gym, '2')
+floor_1.link_room(floor_2, 'f2')
 
-gym.link_room(hall_1, '1')
-#----------------------------------------------------------------------------
-hall_2.link_room(class_206, '1')
-hall_2.link_room(syanka, '2')
-hall_2.link_room(ilkovych, '3')
-hall_2.link_room(headmaster, '4')
-hall_2.link_room(teachers_room_2, '5')
+gym.link_room(floor_1, 'f1')
+# ----------------------------------------------------------------------------
+floor_2.link_room(class_206, '1')
+floor_2.link_room(syanka, '2')
+floor_2.link_room(ilkovych, '3')
+floor_2.link_room(headmaster, '4')
+floor_2.link_room(teachers_room_2, '5')
+floor_2.link_room(floor_1, 'f1')
+floor_2.link_room(floor_3, 'f3')
 
-class_206.link_room(hall_2, '1')
-syanka.link_room(hall_2, '1')
-ilkovych.link_room(hall_2, '1')
-headmaster.link_room(hall_2, '1')
-teachers_room_2.link_room(hall_2, '1')
-#----------------------------------------------------------------------------
-hall_3.link_room(it_class, '1')
-hall_3.link_room(teachers_room_3, '2')
+class_206.link_room(floor_2, 'f2')
+syanka.link_room(floor_2, 'f2')
+ilkovych.link_room(floor_2, 'f2')
+headmaster.link_room(floor_2, 'f2')
+teachers_room_2.link_room(floor_2, 'f2')
+# ----------------------------------------------------------------------------
+floor_3.link_room(it_class, '1')
+floor_3.link_room(teachers_room_3, '2')
+floor_3.link_room(floor_2, 'f2')
 
-it_class.link_room(hall_3, '1')
-teachers_room_3.link_room(hall_3, '1')
+it_class.link_room(floor_3, 'f3')
+teachers_room_3.link_room(floor_3, 'f3')
 
 
-dmytrych = game.Enemy("Dmytrovych", "Self-proclaimed CEO of linguists")
+dmytrych = game.Enemy("Dmytrovych", "Self-proclaimed CEO of linguists. He is extremely afraid of mathematics.")
 dmytrych.set_conversation("Мені 13ий минало...")
-dmytrych.set_weakness("Oksanka's photo")
+dmytrych.set_weakness("Oksana's photo")
 teachers_room_2.set_character(dmytrych)
 
 vasylko = game.Enemy("Kemist", "Free hands")
@@ -96,55 +103,93 @@ vasylko.set_weakness("Slave-owner")
 teachers_room_3.set_character(vasylko)
 
 rostyk = game.Enemy("Rostyk", "IT Specialist")
-rostyk.set_conversation("Today we talk about <code on the board>.")
-rostyk.set_weakness("password")
+rostyk.set_conversation("Did you write the program on leaflets at home?")
+rostyk.set_weakness("Password")
 it_class.set_character(rostyk)
 
 m4 = game.Enemy("4M4", "Bodybuilder")
-m4.set_conversation("Wait a minute, I'm going to the toilet...")
+m4.set_conversation("Look at me, I'm a beautiful creature...")
 m4.set_weakness("Toilet paper")
 gym.set_character(m4)
 
 prybyralka = game.Creature("Cleaning manager", "Always has clean table")
-prybyralka.set_conversation("Come on, don't delay the queue. The bell has already rung.")
+prybyralka.set_conversation(
+    "Come on, don't delay the queue. The bell has already rung.")
 wardrobe.set_character(prybyralka)
 
 
-dobosevych=game.Friend('Maryan Dobosevych', 'Director of the lyceum')
+dobosevych = game.Friend('Maryan Dobosevych', 'Director of the lyceum')
 dobosevych.set_conversation("Where is my signet?")
-dobosevych.set_weakness("signet")
+dobosevych.set_weakness("Signet")
 headmaster.set_character(dobosevych)
 
-Oksanka=game.Friend('Oksanka', 'Math teacher')
+Oksanka = game.Friend('Oksanka', 'Math teacher')
 Oksanka.set_conversation("I can't find you homework!!!")
-Oksanka.set_weakness("homework")
-syanka.set_character(dobosevych)
+Oksanka.set_weakness("Homework")
+syanka.set_character(Oksanka)
 
-Ilkovych=game.Friend('Ilkovych', 'Just friend to everyone.')
+Ilkovych = game.Creature('Ilkovych', 'Just friend to everyone.')
 Ilkovych.set_conversation("Have a nice day!!!")
-Ilkovych.set_weakness("homework")
 ilkovych.set_character(Ilkovych)
 
-pani_liuba=game.Friend('Pania Liuba', 'Seller.')
-pani_liuba.set_conversation("Are you 18 old?")
-pani_liuba.set_weakness("money")
+pani_liuba = game.Friend('Pania Liuba', 'Seller.')
+pani_liuba.set_conversation("Are you 18 years old?")
+pani_liuba.set_weakness("Money")
 svyatyy.set_character(pani_liuba)
 
+yrmych = game.Friend('YurMych', 'History teacher')
+yrmych.set_conversation("Do you remember Philip Orlyk's Constitution?")
+yrmych.set_weakness("Vodka")
+floor_1.set_character(yrmych)
+
+p_halya = game.Friend("Pani Halya", '206 cleaner')
+p_halya.set_conversation("Haven't you seen my keys?")
+p_halya.set_weakness("Keys")
+class_206.set_character(p_halya)
+
+keys = game.Item("Keys")
+keys.set_description("Small silver keys")
+lyceum.set_item(keys)
 
 
 toilet_paper = game.Item("Toilet paper")
 toilet_paper.set_description("Kohabynka")
-ballroom.set_item(cheese)
 
-book = game.Item("book")
-book.set_description("A really good book entitled 'Knitting for dummies'")
-dining_hall.set_item(book)
+homework = game.Item("Homework")
+homework.set_description("Math")
+class_206.set_item(homework)
 
-current_room = kitchen
+syanka_photo = game.Item("Oksana's photo")
+syanka_photo.set_description("Just a photo, not what you thought!")
+
+signet = game.Item('Signet')
+signet.set_description('Lyceum signet')
+teachers_room_3.set_item(signet)
+
+password = game.Item('Password')
+password.set_description('Password to all acounts of character')
+
+money = game.Item("Money")
+money.set_description("130 UAH")
+ilkovych.set_item(money)
+
+vodka = game.Item("Vodka")
+vodka.set_description("Nemiroff Delikat")
+
+phone = game.Item("Slave-owner")
+phone.set_description("iPhone")
+
+dobosevych.set_trade(password)
+Oksanka.set_trade(syanka_photo)
+pani_liuba.set_trade(vodka)
+yrmych.set_trade(phone)
+p_halya.set_trade(toilet_paper)
+
+current_room = outdoor
 backpack = []
 
 dead = False
-
+one_more_try = 1
 while dead == False:
 
     print("\n")
@@ -160,7 +205,7 @@ while dead == False:
 
     command = input("> ")
 
-    if command in ["north", "south", "east", "west"]:
+    if command in ["1", "2", "3", "4", "5", "6", "7", "f1", "f2", "f3"]:
         # Move in the given direction
         current_room = current_room.move(command)
     elif command == "talk":
@@ -180,14 +225,19 @@ while dead == False:
                     # What happens if you win?
                     print("Hooray, you won the fight!")
                     current_room.character = None
-                    if inhabitant.get_defeated() == 2:
+                    if inhabitant.get_defeated() == 4:
                         print("Congratulations, you have vanquished the enemy horde!")
                         dead = True
                 else:
                     # What happens if you lose?
-                    print("Oh dear, you lost the fight.")
-                    print("That's the end of the game")
-                    dead = True
+                    if one_more_try == 1:
+                        one_more_try = 0
+                        print("Oh dear, you lost the fight.")
+                        print("You have one more life. Be careful!")
+                    else:
+                        print("Oh dear, you lost the fight.")
+                        print("That's the end of the game")
+                        dead = True
             else:
                 print("You don't have a " + fight_with)
         else:
@@ -199,5 +249,21 @@ while dead == False:
             current_room.set_item(None)
         else:
             print("There's nothing here to take!")
+    elif command == 'backpack':
+        print(backpack)
+    # Idea by Paul Kryven!
+    elif command == 'trade' and type(inhabitant) == game.Friend:
+        exchange = input("What do you want to trade: ")
+        if exchange in backpack:
+            if exchange == inhabitant.weakness:
+                print(f'You exchanged {exchange} for {inhabitant.trade.name}')
+                backpack.remove(exchange)
+                backpack.append(inhabitant.trade.name)
+            else:
+                print(f"{inhabitant.name} doesn't want this")
+        else:
+            print("You don't have this item")
+    elif command == 'trade' and type(inhabitant) != game.Friend:
+        print(f"{inhabitant.name} doesn't want to trade anything!")
     else:
         print("I don't know how to " + command)
