@@ -40,10 +40,12 @@ teachers_room_2 = game.Room("Teacher's room")
 teachers_room_2.set_description("Shelter of linguist")
 
 floor_2 = game.Room("Floor 2")
-floor_2.set_description("If you arrive before the first lesson begins, expect a cake in the middle of the hallway :)")
+floor_2.set_description(
+    "If you arrive before the first lesson begins, expect a cake in the middle of the hallway :)")
 # ------------------------------------------------------------------------------------------
 it_class = game.Room("It class")
-it_class.set_description("Here are a lot of computer's for word 2003 and board for coding.")
+it_class.set_description(
+    "Here are a lot of computer's for word 2003 and board for coding.")
 
 teachers_room_3 = game.Room("Teacher's room")
 teachers_room_3.set_description("Shelter of Chemists")
@@ -92,7 +94,8 @@ it_class.link_room(floor_3, 'f3')
 teachers_room_3.link_room(floor_3, 'f3')
 
 
-dmytrych = game.Enemy("Dmytrovych", "Self-proclaimed CEO of linguists. He is extremely afraid of mathematics.")
+dmytrych = game.Enemy(
+    "Dmytrovych", "Self-proclaimed CEO of linguists. He is extremely afraid of mathematics.")
 dmytrych.set_conversation("Мені 13ий минало...")
 dmytrych.set_weakness("Oksana's photo")
 teachers_room_2.set_character(dmytrych)
@@ -265,7 +268,7 @@ while dead == False:
             print("You don't have this item")
     elif command == 'trade' and type(inhabitant) != game.Friend:
         print(f"{inhabitant.name} doesn't want to trade anything!")
-    elif command=='help' or '-h' or '--help' or '--h':
+    elif command == 'help' or '-h' or '--help' or '--h':
         print("""
 You can fight, talk and trade with characters.
 To move through the lyceum follow the instructions on the screen. (To move through floors "f2" means "f"+"2")
