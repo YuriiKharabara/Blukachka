@@ -12,9 +12,13 @@ Then you should follow instructions in the terminal. To win this game you have t
 
 Commands which are available for you:
 
+
 talk  - You will be able to see some message from the character in this room
+
 fight - You can fight with the character in this room
+
 take - You can take items in the room
+
 
 You can find example of playing in the end of this file.
 
@@ -29,14 +33,21 @@ You have 2 lives. So, you can loose one fight.
 
 Commands which are available for you:
 
+
 talk  - You will be able to see some message from the character in this room
+
 fight - You can fight with the character in this room
+
 take - You can take items in the room
+
 backpack - You can look what you already have in your backpack
+
 trade - You can trade with "Friends". (You exchange one Item to another)
+
 help - You will see commands which are available for you
 
-All rules are the same. Open  [Game_lyceum](Game_lyceum) and run [main.py](Game_lyceum/main.py)
+
+Main rules are the same. Open  [Game_lyceum](Game_lyceum) and run [main.py](Game_lyceum/main.py)
 
 ## Examples:
   
