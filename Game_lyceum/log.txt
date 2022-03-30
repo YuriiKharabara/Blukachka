@@ -1,0 +1,709 @@
+Outdoor
+--------------------
+You're on the street
+1 - Svyatyy shop
+2 - Physmat lyceum
+> help
+
+        You can fight, talk and trade with characters.
+        To move through the lyceum follow the instructions on the screen. (To move through floors "f2" means "f"+"2")
+
+        fight: fight with enemies.
+        talk: talk with creatures
+        trade: trade with friends
+        take: take item in room
+        backpack: Look what you have in your backpack.
+        help, --help, -h: help
+        
+
+
+Outdoor
+--------------------
+You're on the street
+1 - Svyatyy shop
+2 - Physmat lyceum
+> talk
+Never take these pills again!... Here is nobody you can talk with!
+
+
+Outdoor
+--------------------
+You're on the street
+1 - Svyatyy shop
+2 - Physmat lyceum
+> fight
+There is no one here to fight with
+
+
+Outdoor
+--------------------
+You're on the street
+1 - Svyatyy shop
+2 - Physmat lyceum
+> take
+There's nothing here to take!
+
+
+Outdoor
+--------------------
+You're on the street
+1 - Svyatyy shop
+2 - Physmat lyceum
+> 3
+
+Poltergeist, is it you? There are no room in this direction!
+
+
+Outdoor
+--------------------
+You're on the street
+1 - Svyatyy shop
+2 - Physmat lyceum
+> 2
+
+
+Physmat lyceum
+--------------------
+Boarding school at UCU
+1 - Outdoor
+2 - Wardrobe
+The [Keys] is here - Small silver keys
+> take
+You put the Keys in your backpack
+
+
+Physmat lyceum
+--------------------
+Boarding school at UCU
+1 - Outdoor
+2 - Wardrobe
+> 2
+
+
+Wardrobe
+--------------------
+Just a wardrobe...
+1 - Physmat lyceum
+f1 - Floor 1
+Cleaning manager is here!
+Always has clean table
+> talk
+[Cleaning manager says]: Come on, don't delay the queue. The bell has already rung.
+
+
+Wardrobe
+--------------------
+Just a wardrobe...
+1 - Physmat lyceum
+f1 - Floor 1
+Cleaning manager is here!
+Always has clean table
+> f1
+
+
+Floor 1
+--------------------
+A lot of classes, but all of them are closed, except gym...
+1 - Wardrobe
+2 - gym
+f2 - Floor 2
+YurMych is here!
+History teacher
+> f2
+
+
+Floor 2
+--------------------
+If you arrive before the first lesson begins, expect a cake in the middle of the hallway :)
+1 - Class 206
+2 - Oksana's *Bohdanivna* room
+3 - Ilkovych's class
+4 - Mr. Dobosevych class
+5 - Teacher's room
+f1 - Floor 1
+f3 - Floor 3
+> 1
+
+
+Class 206
+--------------------
+Shelter for Oksanka
+f2 - Floor 2
+Pani Halya is here!
+206 cleaner
+The [Homework] is here - Math
+> take
+You put the Homework in your backpack
+
+
+Class 206
+--------------------
+Shelter for Oksanka
+f2 - Floor 2
+Pani Halya is here!
+206 cleaner
+> trade
+What do you want to trade: Keys
+You exchanged Keys for Toilet paper
+
+
+Class 206
+--------------------
+Shelter for Oksanka
+f2 - Floor 2
+Pani Halya is here!
+206 cleaner
+> backpack
+['Homework', 'Toilet paper']
+
+
+Class 206
+--------------------
+Shelter for Oksanka
+f2 - Floor 2
+Pani Halya is here!
+206 cleaner
+> f2
+
+
+Floor 2
+--------------------
+If you arrive before the first lesson begins, expect a cake in the middle of the hallway :)
+1 - Class 206
+2 - Oksana's *Bohdanivna* room
+3 - Ilkovych's class
+4 - Mr. Dobosevych class
+5 - Teacher's room
+f1 - Floor 1
+f3 - Floor 3
+> 2
+
+
+Oksana's *Bohdanivna* room
+--------------------
+Small room where you always can find Ihor Telychyn if you need him.
+f2 - Floor 2
+Oksanka is here!
+Math teacher
+> talk
+[Oksanka says]: I can't find you homework!!!
+
+
+Oksana's *Bohdanivna* room
+--------------------
+Small room where you always can find Ihor Telychyn if you need him.
+f2 - Floor 2
+Oksanka is here!
+Math teacher
+> trade
+What do you want to trade: Homework
+You exchanged Homework for Oksana's photo
+
+
+Oksana's *Bohdanivna* room
+--------------------
+Small room where you always can find Ihor Telychyn if you need him.
+f2 - Floor 2
+Oksanka is here!
+Math teacher
+> f2
+
+
+Floor 2
+--------------------
+If you arrive before the first lesson begins, expect a cake in the middle of the hallway :)
+1 - Class 206
+2 - Oksana's *Bohdanivna* room
+3 - Ilkovych's class
+4 - Mr. Dobosevych class
+5 - Teacher's room
+f1 - Floor 1
+f3 - Floor 3
+> 5
+
+
+Teacher's room
+--------------------
+Shelter of linguist
+f2 - Floor 2
+Dmytrovych is here!
+Self-proclaimed CEO of linguists. He is extremely afraid of mathematics.
+> talk
+[Dmytrovych says]: Мені 13ий минало...
+
+
+Teacher's room
+--------------------
+Shelter of linguist
+f2 - Floor 2
+Dmytrovych is here!
+Self-proclaimed CEO of linguists. He is extremely afraid of mathematics.
+> fight
+What will you fight with?
+Oksana's photo
+You fend Dmytrovych off with the Oksana's photo
+Hooray, you won the fight!
+
+
+Teacher's room
+--------------------
+Shelter of linguist
+f2 - Floor 2
+> f2
+
+
+Floor 2
+--------------------
+If you arrive before the first lesson begins, expect a cake in the middle of the hallway :)
+1 - Class 206
+2 - Oksana's *Bohdanivna* room
+3 - Ilkovych's class
+4 - Mr. Dobosevych class
+5 - Teacher's room
+f1 - Floor 1
+f3 - Floor 3
+> 3
+
+
+Ilkovych's class
+--------------------
+A big room with piano, projector ...
+f2 - Floor 2
+Ilkovych is here!
+Just friend to everyone.
+The [Money] is here - 130 UAH
+> take
+You put the Money in your backpack
+
+
+Ilkovych's class
+--------------------
+A big room with piano, projector ...
+f2 - Floor 2
+Ilkovych is here!
+Just friend to everyone.
+> f2
+
+
+Floor 2
+--------------------
+If you arrive before the first lesson begins, expect a cake in the middle of the hallway :)
+1 - Class 206
+2 - Oksana's *Bohdanivna* room
+3 - Ilkovych's class
+4 - Mr. Dobosevych class
+5 - Teacher's room
+f1 - Floor 1
+f3 - Floor 3
+> 4
+
+
+Mr. Dobosevych class
+--------------------
+Nobody saw what's there
+f2 - Floor 2
+Maryan Dobosevych is here!
+Director of the lyceum
+> talk
+[Maryan Dobosevych says]: Where is my signet?
+
+
+Mr. Dobosevych class
+--------------------
+Nobody saw what's there
+f2 - Floor 2
+Maryan Dobosevych is here!
+Director of the lyceum
+> f2
+
+
+Floor 2
+--------------------
+If you arrive before the first lesson begins, expect a cake in the middle of the hallway :)
+1 - Class 206
+2 - Oksana's *Bohdanivna* room
+3 - Ilkovych's class
+4 - Mr. Dobosevych class
+5 - Teacher's room
+f1 - Floor 1
+f3 - Floor 3
+> f3
+
+
+Floor 3
+--------------------
+It's scary ... There are physicists ...
+1 - It class
+2 - Teacher's room
+f2 - Floor 2
+> 2
+
+
+Teacher's room
+--------------------
+Shelter of Chemists
+f3 - Floor 3
+Kemist is here!
+Free hands
+The [Signet] is here - Lyceum signet
+> f3
+
+
+Floor 3
+--------------------
+It's scary ... There are physicists ...
+1 - It class
+2 - Teacher's room
+f2 - Floor 2
+> f2
+
+
+Floor 2
+--------------------
+If you arrive before the first lesson begins, expect a cake in the middle of the hallway :)
+1 - Class 206
+2 - Oksana's *Bohdanivna* room
+3 - Ilkovych's class
+4 - Mr. Dobosevych class
+5 - Teacher's room
+f1 - Floor 1
+f3 - Floor 3
+> f1
+
+
+Floor 1
+--------------------
+A lot of classes, but all of them are closed, except gym...
+1 - Wardrobe
+2 - gym
+f2 - Floor 2
+YurMych is here!
+History teacher
+> 1
+
+
+Wardrobe
+--------------------
+Just a wardrobe...
+1 - Physmat lyceum
+f1 - Floor 1
+Cleaning manager is here!
+Always has clean table
+> 1
+
+
+Physmat lyceum
+--------------------
+Boarding school at UCU
+1 - Outdoor
+2 - Wardrobe
+> 1
+
+
+Outdoor
+--------------------
+You're on the street
+1 - Svyatyy shop
+2 - Physmat lyceum
+> 1
+
+
+Svyatyy shop
+--------------------
+Works round the clock.
+1 - Outdoor
+Pania Liuba is here!
+Seller.
+> trade
+What do you want to trade: Money
+You exchanged Money for Vodka
+
+
+Svyatyy shop
+--------------------
+Works round the clock.
+1 - Outdoor
+Pania Liuba is here!
+Seller.
+> talk
+[Pania Liuba says]: Are you 18 years old?
+
+
+Svyatyy shop
+--------------------
+Works round the clock.
+1 - Outdoor
+Pania Liuba is here!
+Seller.
+> 1
+
+
+Outdoor
+--------------------
+You're on the street
+1 - Svyatyy shop
+2 - Physmat lyceum
+> 1
+
+
+Svyatyy shop
+--------------------
+Works round the clock.
+1 - Outdoor
+Pania Liuba is here!
+Seller.
+> 1
+
+
+Outdoor
+--------------------
+You're on the street
+1 - Svyatyy shop
+2 - Physmat lyceum
+> 2
+
+
+Physmat lyceum
+--------------------
+Boarding school at UCU
+1 - Outdoor
+2 - Wardrobe
+> 2
+
+
+Wardrobe
+--------------------
+Just a wardrobe...
+1 - Physmat lyceum
+f1 - Floor 1
+Cleaning manager is here!
+Always has clean table
+> f1
+
+
+Floor 1
+--------------------
+A lot of classes, but all of them are closed, except gym...
+1 - Wardrobe
+2 - gym
+f2 - Floor 2
+YurMych is here!
+History teacher
+> talk
+[YurMych says]: Do you remember Philip Orlyk's Constitution?
+
+
+Floor 1
+--------------------
+A lot of classes, but all of them are closed, except gym...
+1 - Wardrobe
+2 - gym
+f2 - Floor 2
+YurMych is here!
+History teacher
+> trade
+What do you want to trade: Vodka
+You exchanged Vodka for Slave-owner
+
+
+Floor 1
+--------------------
+A lot of classes, but all of them are closed, except gym...
+1 - Wardrobe
+2 - gym
+f2 - Floor 2
+YurMych is here!
+History teacher
+> f2
+
+
+Floor 2
+--------------------
+If you arrive before the first lesson begins, expect a cake in the middle of the hallway :)
+1 - Class 206
+2 - Oksana's *Bohdanivna* room
+3 - Ilkovych's class
+4 - Mr. Dobosevych class
+5 - Teacher's room
+f1 - Floor 1
+f3 - Floor 3
+> f3
+
+
+Floor 3
+--------------------
+It's scary ... There are physicists ...
+1 - It class
+2 - Teacher's room
+f2 - Floor 2
+> 2
+
+
+Teacher's room
+--------------------
+Shelter of Chemists
+f3 - Floor 3
+Kemist is here!
+Free hands
+The [Signet] is here - Lyceum signet
+> take
+You put the Signet in your backpack
+
+
+Teacher's room
+--------------------
+Shelter of Chemists
+f3 - Floor 3
+Kemist is here!
+Free hands
+> fight
+What will you fight with?
+Slave-owner
+You fend Kemist off with the Slave-owner
+Hooray, you won the fight!
+
+
+Teacher's room
+--------------------
+Shelter of Chemists
+f3 - Floor 3
+> f3
+
+
+Floor 3
+--------------------
+It's scary ... There are physicists ...
+1 - It class
+2 - Teacher's room
+f2 - Floor 2
+> f2
+
+
+Floor 2
+--------------------
+If you arrive before the first lesson begins, expect a cake in the middle of the hallway :)
+1 - Class 206
+2 - Oksana's *Bohdanivna* room
+3 - Ilkovych's class
+4 - Mr. Dobosevych class
+5 - Teacher's room
+f1 - Floor 1
+f3 - Floor 3
+> 4
+
+
+Mr. Dobosevych class
+--------------------
+Nobody saw what's there
+f2 - Floor 2
+Maryan Dobosevych is here!
+Director of the lyceum
+> trade
+What do you want to trade: Signet
+You exchanged Signet for Password
+
+
+Mr. Dobosevych class
+--------------------
+Nobody saw what's there
+f2 - Floor 2
+Maryan Dobosevych is here!
+Director of the lyceum
+> f2
+
+
+Floor 2
+--------------------
+If you arrive before the first lesson begins, expect a cake in the middle of the hallway :)
+1 - Class 206
+2 - Oksana's *Bohdanivna* room
+3 - Ilkovych's class
+4 - Mr. Dobosevych class
+5 - Teacher's room
+f1 - Floor 1
+f3 - Floor 3
+> f3
+
+
+Floor 3
+--------------------
+It's scary ... There are physicists ...
+1 - It class
+2 - Teacher's room
+f2 - Floor 2
+> 1
+
+
+It class
+--------------------
+Here are a lot of computer's for word 2003 and board for coding.
+f3 - Floor 3
+Rostyk is here!
+IT Specialist
+> fight
+What will you fight with?
+Password
+You fend Rostyk off with the Password
+Hooray, you won the fight!
+
+
+It class
+--------------------
+Here are a lot of computer's for word 2003 and board for coding.
+f3 - Floor 3
+> backpack
+['Toilet paper', "Oksana's photo", 'Slave-owner', 'Password']
+
+
+It class
+--------------------
+Here are a lot of computer's for word 2003 and board for coding.
+f3 - Floor 3
+> f3
+
+
+Floor 3
+--------------------
+It's scary ... There are physicists ...
+1 - It class
+2 - Teacher's room
+f2 - Floor 2
+> f2
+
+
+Floor 2
+--------------------
+If you arrive before the first lesson begins, expect a cake in the middle of the hallway :)
+1 - Class 206
+2 - Oksana's *Bohdanivna* room
+3 - Ilkovych's class
+4 - Mr. Dobosevych class
+5 - Teacher's room
+f1 - Floor 1
+f3 - Floor 3
+> f1
+
+
+Floor 1
+--------------------
+A lot of classes, but all of them are closed, except gym...
+1 - Wardrobe
+2 - gym
+f2 - Floor 2
+YurMych is here!
+History teacher
+> 2
+
+
+gym
+--------------------
+A large green hall with a volleyball net and basketball hoops
+f1 - Floor 1
+4M4 is here!
+Bodybuilder
+> fight
+What will you fight with?
+Toilet paper
+You fend 4M4 off with the Toilet paper
+Hooray, you won the fight!
+Congratulations, you have vanquished the enemy horde!

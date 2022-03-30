@@ -215,6 +215,8 @@ while dead == False:
         # Talk to the inhabitant - check whether there is one!
         if inhabitant is not None:
             inhabitant.talk()
+        else:
+            print('Never take these pills again!... Here is nobody you can talk with!')
     elif command == "fight":
         if inhabitant is not None:
             # Fight with the inhabitant, if there is one
@@ -268,17 +270,30 @@ while dead == False:
             print("You don't have this item")
     elif command == 'trade' and type(inhabitant) != game.Friend:
         print(f"{inhabitant.name} doesn't want to trade anything!")
-    elif command == 'help' or '-h' or '--help' or '--h':
+    elif command == 'help' or command == '-h' or command == '--help' or command == '--h':
         print("""
-You can fight, talk and trade with characters.
-To move through the lyceum follow the instructions on the screen. (To move through floors "f2" means "f"+"2")
+        You can fight, talk and trade with characters.
+        To move through the lyceum follow the instructions on the screen. (To move through floors "f2" means "f"+"2")
 
-fight: fight with enemies.
-talk: talk with creatures
-trade: trade with friends
-take: take item in room
-backpack: Look what you have in your backpack.
-help, --help, -h: help
+        fight: fight with enemies.
+        talk: talk with creatures
+        trade: trade with friends
+        take: take item in room
+        backpack: Look what you have in your backpack.
+        help, --help, -h: help
         """)
     else:
         print("I don't know how to " + command)
+        print("""
+        You can fight, talk and trade with characters.
+        To move through the lyceum follow the instructions on the screen. (To move through floors "f2" means "f"+"2")
+
+        fight: fight with enemies.
+        talk: talk with creatures
+        trade: trade with friends
+        take: take item in room
+        backpack: Look what you have in your backpack.
+
+        Also you can call this menu by typing
+        help, --help, -h
+        """)
