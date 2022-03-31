@@ -41,7 +41,7 @@ teachers_room_2.set_description("Shelter of linguist")
 
 floor_2 = game.Room("Floor 2")
 floor_2.set_description(
-    "If you arrive before the first lesson begins, expect a cake in the middle of the hallway :)")
+    "If you arrive before the first lesson begins, expect a 'cake' in the middle of the hallway :)")
 # ------------------------------------------------------------------------------------------
 it_class = game.Room("It class")
 it_class.set_description(
@@ -219,7 +219,7 @@ while dead == False:
     command = input("> ")
 
     if command in ["1", "2", "3", "4", "5", "6", "7", "f1", "f2", "f3"]:
-        # try:
+        # try:2
         # Move in the given direction
         current_room = current_room.move(command)
         # except:
