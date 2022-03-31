@@ -1,13 +1,6 @@
 """Game Blukachka"""
 
-# class Floor:
-#     def __init__(self, floor) -> None:
-#         self.floor=floor
-#         self.directions_for_floor = {'FLoor 1': None,
-#                            'Floor 2': None, 'Floor 3': None}
-#     def link_rooms(self, room, direction):
-#         self.directions_for_floor[direction] = room 
-
+import random
 
 
 class Room:
@@ -22,9 +15,8 @@ class Room:
         self.name = name
         self.character = None
         self.directions = {'1': None,
-                           '2': None, '3': None, '4': None, '5': None, 'f1': None, 'f2': None, 'f3': None}
+                           '2': None, '3': None, '4': None, '5': None, '6': None, '7': None, 'f1': None, 'f2': None, 'f3': None}
         self.item = None
-        # super().__init__(floor)
 
     def set_description(self, description):
         """Sets description for the room
@@ -119,7 +111,7 @@ class Creature:
         """Sets words of character
 
         Args:
-            message (str): replic
+            message (list): replics
         """
         self.message = message
 
@@ -134,7 +126,8 @@ class Creature:
     def talk(self):
         """Print character's words
         """
-        print(f'[{self.name} says]: {self.message}')
+        message = random.choice(self.message)
+        print(f'[{self.name} says]: {message}')
 
 
 class Enemy(Creature):
@@ -171,6 +164,7 @@ class Enemy(Creature):
         Enemy.defeated += 1
         return Enemy.defeated
 
+
 class Friend(Creature):
     def __init__(self, name, description):
         """Constructor
@@ -180,6 +174,7 @@ class Friend(Creature):
             description (str): Description for the creature
         """
         super().__init__(name, description)
+
     def set_weakness(self, weakness):
         """Sets weakness for the Friend
 
@@ -187,9 +182,11 @@ class Friend(Creature):
             weakness (str): weakness
         """
         self.weakness = weakness
+
     def set_trade(self, item):
-        self.trade=item
-        
+        self.trade = item
+
+
 class Item:
     """Item class"""
 

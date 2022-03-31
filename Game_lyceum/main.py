@@ -96,57 +96,67 @@ teachers_room_3.link_room(floor_3, 'f3')
 
 dmytrych = game.Enemy(
     "Dmytrovych", "Self-proclaimed CEO of linguists. He is extremely afraid of mathematics.")
-dmytrych.set_conversation("Мені 13ий минало...")
+dmytrych.set_conversation(["Мені 13ий минало...",
+                           "Чого ви відкрили двері я ж захворію",
+                           "Ти шо москаль?", "Вадим доска", "Хлопці ви що мене не поважаєте?"])
 dmytrych.set_weakness("Oksana's photo")
 teachers_room_2.set_character(dmytrych)
 
 vasylko = game.Enemy("Kemist", "Free hands")
-vasylko.set_conversation("You will achieve nothing in life without chemistry")
+vasylko.set_conversation(["Папуаси!", "Колись коли в ліцеї вчились хороші учні вони \
+завжди мене таке питали",
+                         "Люди навіть з фізмату йдуть вчити хімію і здають зно з хімії"])
 vasylko.set_weakness("Slave-owner")
 teachers_room_3.set_character(vasylko)
 
 rostyk = game.Enemy("Rostyk", "IT Specialist")
-rostyk.set_conversation("Did you write the program on leaflets at home?")
+rostyk.set_conversation(
+    ["Ви гроші на бобра здали?", 'Це списано', 'Я навіть не буду на це дивитись'])
 rostyk.set_weakness("Password")
 it_class.set_character(rostyk)
 
 m4 = game.Enemy("4M4", "Bodybuilder")
-m4.set_conversation("Look at me, I'm a beautiful creature...")
+m4.set_conversation(
+    ["2 в журнал зразу без виправлення", "Так все 2", "Де форма?!"])
 m4.set_weakness("Toilet paper")
 gym.set_character(m4)
 
-prybyralka = game.Creature("Cleaning manager", "Always has clean table")
+prybyralka = game.Creature("Prybyralka", "Always has clean table")
 prybyralka.set_conversation(
-    "Come on, don't delay the queue. The bell has already rung.")
+    ["Прохооодимо, не затримуємо людеей", "Дзвінок вже був"])
 wardrobe.set_character(prybyralka)
 
 
 dobosevych = game.Friend('Maryan Dobosevych', 'Director of the lyceum')
-dobosevych.set_conversation("Where is my signet?")
+dobosevych.set_conversation(
+    ["Where is my signet?", "З днем дня!", "Ееееееееееееее"])
 dobosevych.set_weakness("Signet")
 headmaster.set_character(dobosevych)
 
 Oksanka = game.Friend('Oksanka', 'Math teacher')
-Oksanka.set_conversation("I can't find you homework!!!")
+Oksanka.set_conversation(["Де твоє дз?!"])
 Oksanka.set_weakness("Homework")
 syanka.set_character(Oksanka)
 
 Ilkovych = game.Creature('Ilkovych', 'Just friend to everyone.')
-Ilkovych.set_conversation("Have a nice day!!!")
+Ilkovych.set_conversation(['Всякі щурі тут розвелись',
+                          "Ви що в ліцей прийшли з дівчатами загравати", "Ти класний молодий \
+чоловік"])
 ilkovych.set_character(Ilkovych)
 
-pani_liuba = game.Friend('Pania Liuba', 'Seller.')
-pani_liuba.set_conversation("Are you 18 years old?")
+pani_liuba = game.Friend('Ms. Liuba', 'Seller.')
+pani_liuba.set_conversation(["Are you 18 years old?"])
 pani_liuba.set_weakness("Money")
 svyatyy.set_character(pani_liuba)
 
-yrmych = game.Friend('YurMych', 'History teacher')
-yrmych.set_conversation("Do you remember Philip Orlyk's Constitution?")
+yrmych = game.Friend('YurMykh', 'History teacher')
+yrmych.set_conversation(["Москалі - не люди", "Українці  придумали світ",
+                        "Ви думали то американці придумали? Нєєєє то ми", "В коростів зі мною їздив?"])
 yrmych.set_weakness("Vodka")
 floor_1.set_character(yrmych)
 
 p_halya = game.Friend("Pani Halya", '206 cleaner')
-p_halya.set_conversation("Haven't you seen my keys?")
+p_halya.set_conversation(["Haven't you seen my keys?"])
 p_halya.set_weakness("Keys")
 class_206.set_character(p_halya)
 
@@ -209,8 +219,11 @@ while dead == False:
     command = input("> ")
 
     if command in ["1", "2", "3", "4", "5", "6", "7", "f1", "f2", "f3"]:
+        # try:
         # Move in the given direction
         current_room = current_room.move(command)
+        # except:
+
     elif command == "talk":
         # Talk to the inhabitant - check whether there is one!
         if inhabitant is not None:
@@ -218,7 +231,7 @@ while dead == False:
         else:
             print('Never take these pills again!... Here is nobody you can talk with!')
     elif command == "fight":
-        if inhabitant is not None:
+        if inhabitant is not None and type(inhabitant) == game.Enemy:
             # Fight with the inhabitant, if there is one
             print("What will you fight with?")
             fight_with = input()
@@ -245,8 +258,11 @@ while dead == False:
                         dead = True
             else:
                 print("You don't have a " + fight_with)
-        else:
+        elif inhabitant is None:
             print("There is no one here to fight with")
+        else:
+            print(
+                f"You will never win {inhabitant.name}, try to become friends.")
     elif command == "take":
         if item is not None:
             print("You put the " + item.get_name() + " in your backpack")
@@ -256,8 +272,9 @@ while dead == False:
             print("There's nothing here to take!")
     elif command == 'backpack':
         print(backpack)
+
     # Idea by Paul Kryven!
-    elif command == 'trade' and type(inhabitant) == game.Friend:
+    elif command == 'trade' and inhabitant is not None and type(inhabitant) == game.Friend:
         exchange = input("What do you want to trade: ")
         if exchange in backpack:
             if exchange == inhabitant.weakness:
@@ -268,6 +285,8 @@ while dead == False:
                 print(f"{inhabitant.name} doesn't want this")
         else:
             print("You don't have this item")
+    elif command == 'trade' and inhabitant is None:
+        print("You are not in Russia, you shouldn't pay to breathe!")
     elif command == 'trade' and type(inhabitant) != game.Friend:
         print(f"{inhabitant.name} doesn't want to trade anything!")
     elif command == 'help' or command == '-h' or command == '--help' or command == '--h':
